@@ -1,0 +1,29 @@
+.titulo{
+  background-color: rgb(220, 160, 81);
+}
+.contenedor {
+  width: 50%;
+  height: auto;
+}
+.abajo {
+  position: absolute;
+  width: 100%;
+  bottom: 0 !important;
+}
+body{
+  background-color: rgb(240, 240, 240);
+}
+.entrar{
+  background-color: rgb(228, 191, 141);
+}
+.entrar:hover{
+  background-color: rgb(220, 160, 81);
+}
+.cuenta{
+  width: 50%;
+  background-color: rgb(201, 201, 201);
+}
+.cuenta:hover{
+  background-color: black;
+  color: white;
+}

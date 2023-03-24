@@ -1,0 +1,51 @@
+body{
+  background-color: rgb(240, 240, 240);
+}
+.titulo{
+  background-color: rgb(220, 160, 81);
+}
+.abajo {
+  position: absolute;
+  width: 100%;
+  bottom: 50 !important;
+}
+.etiqueta{
+  color: rgb(220, 160, 81);
+}
+.etiqueta:hover{
+  color: black;
+}
+.etiqueta1{
+  background-color: rgb(220, 160, 81) ;
+  border: 5px;
+  border-radius: 5px;
+}
+.etiqueta2{
+  color: black;
+}
+.etiqueta2:hover{
+  color: black;
+}
+.columna{
+  height: 385px;
+}
+.aetiqueta{
+  background-color: rgb(228, 191, 141);
+}
+.aetiqueta:hover{
+  background-color: rgb(220, 160, 81);
+}
+.entrar{
+  background-color: rgb(228, 191, 141);
+}
+.entrar:hover{
+  background-color: rgb(220, 160, 81);
+}
+.drop1{
+  position: absolute;
+  left: 45%;
+}
+.drop2{
+  position: absolute;
+  left: 90%;
+}
