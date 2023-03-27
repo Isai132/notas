@@ -1,7 +1,7 @@
 <?php
 require '../includes/conexion.php';
 $name = $_POST['nombre'];
-$lastname = $_POST['ápellido'];
+$lastname = $_POST['apellido'];
 $user = $_POST['usuario'];
 $pass = $_POST['contraseña'];
 
@@ -38,29 +38,15 @@ $sql = "INSERT INTO usuarios (nombre, apellido, usuario, contraseña) VALUES ('$
   </nav>
   <div class="container p-4">
     <div class="shadow contenedor container mt-5 p-4 bg-white text-center">
-      <h3>Registrate</h3>
       <form action="vistas/cuentaCreada.php" method="POST">
         <div class="mb-4 mt-4 row">
           <?php if($resultado) { ?>
-						<p>Cuenta creada</p>
+						<h3>Cuenta creada</h3>
 						<?php } else { ?>
 						<h3>ERROR AL GUARDAR</h3>
 					<?php } ?>
-          <div class="col">
-            <input type="text" class="form-control" id="nombre" placeholder="Nombre" name="nombre">
-          </div>
-          <div class="col">
-            <input type="text" class="form-control" id="apellido" placeholder="Apellido" name="apellido">
-          </div>
-        </div>
-        <div class="mb-4">
-          <input type="text" class="form-control" id="usuario" placeholder="Usuario" name="usuario">
-        </div>
-        <div class="mb-4">
-          <input type="password" class="form-control" id="contraseña" placeholder="Contraseña" name="contraseña">
-        </div>
         <div class="d-grid">
-          <button type="submit" class="btn entrar">Crear cuenta</button>
+          <button type="button" onclick="location.href='../index.php'" class="btn entrar mt-3">Iniciar Sesión</button>
         </div>
       </form>
     </div>
