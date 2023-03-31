@@ -58,6 +58,7 @@
     <div class="position-absolute">
       <div id="loader"></div>
     </div>
+    <p>Bienvenido <?php echo $user->getNombre();  ?></p>
     <div id="resultados_ajax"></div>
     <div class="tab-content bg-transparent">
 
@@ -79,10 +80,17 @@
                 <div class="notes-content">
 
                   <div class="row">
+                    
+                  <div class="col-md-1 mb-3">
+                      <div class="note-title">
+                        <input type="text" id="idUser" name="idUser" class="form-control" />
+                      </div>
+                    </div>
+
                     <div class="col-md-12 mb-3">
                       <div class="note-title">
                         <label>Título</label>
-                        <input type="text" id="note-has-title" name="note-has-title" class="form-control" minlength="10"
+                        <input type="text" id="note-has-title" name="note-has-title" class="form-control"
                           placeholder="Título" required />
                       </div>
                     </div>
@@ -91,7 +99,7 @@
                       <div class="note-description">
                         <label>Descripción</label>
                         <textarea id="note-has-description" name="note-has-description" class="form-control"
-                          minlength="30" placeholder="Descripción" required rows="3"></textarea>
+                           placeholder="Descripción" required rows="3"></textarea>
                       </div>
                     </div>
                   </div>
@@ -109,11 +117,10 @@
       </div>
     </form>
   </div>
-  <div class="abajo mb-0 p-3 bg-secondary text-white text-center">
-    <p>© Derechos Reservados 2023 WebApp Notas</p>
-  </div>
-
   <script type="text/javascript" src="./js/app.js"></script>
 </body>
+<script>
+    document.guardar_nota.idUser.value = <?php echo $user->getId();  ?>
+  </script>
 
 </html>

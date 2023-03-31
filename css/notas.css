@@ -7,7 +7,7 @@ body{
 .abajo {
   position: absolute;
   width: 100%;
-  bottom: 50 !important;
+  bottom: 10 !important;
 }
 .etiqueta{
   color: rgb(220, 160, 81);

@@ -1,10 +1,10 @@
 <?php
-
 $action = (isset($_REQUEST['action']) && $_REQUEST['action'] != NULL) ? $_REQUEST['action'] : '';
 if ($action == 'ajax') {
 	include("conexionDB.php");
 	$sTable = "notas";
 	$sWhere = " order by id desc";
+	
 
 	if (isset($_REQUEST['delete'])) {
 		$id_nota = intval($_REQUEST['delete']);
@@ -26,12 +26,12 @@ if ($action == 'ajax') {
 		$update = mysqli_query($link, "update $sTable set categoria='$cat' where id='$id_nota'");
 	}
 
-	$sql = "SELECT * FROM  $sTable $sWhere ";
+	$sql = "SELECT * FROM notas INNER JOIN usuarios ON notas.id_usuario ='19' WHERE usuarios.ID = '19'";
 	$query = mysqli_query($link, $sql);
 	$num = mysqli_num_rows($query);
 	if ($num > 0) {
 		?>
-		<div id="note-full-container" class="note-has-grid row">
+		<div id="note-full-container"  class="note-has-grid row">
 			<?php
 			while ($row = mysqli_fetch_array($query)) {
 				?>
@@ -40,9 +40,11 @@ if ($action == 'ajax') {
 						<span class="side-stick"></span>
 						<h5 class="note-title text-truncate w-80 mb-0" data-noteheading="<?= $row['titulo']; ?>"><?= $row['titulo']; ?> <i
 								class="point fa fa-circle ml-1 font-10"></i></h5>
+						</p>
 						<p class="note-date font-12 text-muted">
 							<?= date('d/m/Y', strtotime($row['fecha'])); ?>
 						</p>
+						<?php echo "hola".$id;  ?>
 						<div class="note-content">
 							<p class="note-inner-content text-muted" data-notecontent="<?= $row['descripcion']; ?>"><?= $row['descripcion']; ?>
 							</p>
@@ -82,8 +84,9 @@ if ($action == 'ajax') {
 					</div>
 				</div>
 				<?php
-			}
+			} 
 			?>
+			
 		</div>
 	<?php
 

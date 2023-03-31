@@ -3,6 +3,7 @@ $(function() {
 })
 function load(page){
 			var q= "";
+			var idUser = document.getElementById('idUSer').value
 			$("#loader").fadeIn('slow');
 			$.ajax({
 				url:'vistas/notas_ajax.php?action=ajax&page='+page+'&q='+q,
@@ -12,7 +13,6 @@ function load(page){
 				success:function(data){
 					$(".tab-content").html(data).fadeIn('slow');
 					$('#loader').html('');
-					
 				}
 			})
 		}

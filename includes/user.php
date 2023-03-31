@@ -1,6 +1,7 @@
 <?php
 include 'db.php';
 
+
 class User extends DB
 {
 	private $nombre;
@@ -27,13 +28,18 @@ class User extends DB
 
 		foreach ($query as $currentUser) {
 			$this->nombre = $currentUser['nombre'];
-			$this->username = $currentUser['username'];
+			$this->username = $currentUser['usuario'];
+			$this->id = $currentUser['ID'];
 		}
 	}
 
 	public function getNombre()
 	{
 		return $this->nombre;
+	}
+	public function getId()
+	{
+		return $this->id;
 	}
 }
 
